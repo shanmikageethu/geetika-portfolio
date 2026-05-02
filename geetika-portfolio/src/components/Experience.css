@@ -1,0 +1,122 @@
+.experience {
+  padding: 100px 80px;
+  background: rgba(15, 22, 35, 0.5);
+}
+
+.exp-layout {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+.exp-tabs {
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  border-left: 1px solid var(--border);
+}
+
+.exp-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  cursor: none;
+  transition: all 0.2s;
+  margin-left: -1px;
+}
+
+.exp-tab:hover {
+  background: rgba(0, 212, 255, 0.04);
+}
+
+.exp-tab.active {
+  border-left-color: var(--tab-color, var(--accent));
+  background: rgba(0, 212, 255, 0.06);
+}
+
+.tab-company {
+  font-size: 0.78rem;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.exp-tab.active .tab-company {
+  color: var(--tab-color, var(--accent));
+}
+
+.tab-type {
+  font-size: 0.62rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exp-detail {
+  flex: 1;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.exp-role {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.exp-company {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.exp-duration {
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  color: var(--accent);
+  font-size: 0.65rem;
+  padding: 5px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.exp-points li {
+  display: flex;
+  gap: 12px;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: #7a8fa8;
+}
+
+.point-arrow {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .experience { padding: 80px 24px; }
+  .exp-layout { flex-direction: column; gap: 32px; }
+  .exp-tabs { flex-direction: row; border-left: none; border-bottom: 1px solid var(--border); min-width: unset; overflow-x: auto; }
+  .exp-tab { border-left: none; border-bottom: 2px solid transparent; padding: 12px 16px; white-space: nowrap; }
+  .exp-tab.active { border-bottom-color: var(--tab-color, var(--accent)); border-left-color: transparent; }
+  .exp-header { flex-direction: column; gap: 12px; }
+}

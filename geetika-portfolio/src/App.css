@@ -1,0 +1,84 @@
+.App {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section base */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section headings */
+.section-header {
+  margin-bottom: 60px;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+}
+
+.section-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--accent);
+}
+
+/* Card base */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.06);
+}
+
+/* Clip-path button style */
+.clip-btn {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Glitch effect for headings */
+@keyframes glitch {
+  0%, 100% { clip-path: inset(0 0 100% 0); }
+  20% { clip-path: inset(33% 0 50% 0); transform: translate(-3px); }
+  40% { clip-path: inset(10% 0 80% 0); transform: translate(3px); }
+  60% { clip-path: inset(60% 0 20% 0); transform: translate(-2px); }
+  80% { clip-path: inset(80% 0 5% 0); transform: translate(2px); }
+}

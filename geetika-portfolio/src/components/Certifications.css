@@ -1,0 +1,120 @@
+.certifications {
+  padding: 100px 80px;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.cert-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--cert-color);
+  transform: scaleY(0);
+  transition: transform 0.25s;
+  transform-origin: center;
+}
+
+.cert-card:hover::after {
+  transform: scaleY(1);
+}
+
+.cert-card:hover {
+  border-color: rgba(255,255,255,0.1);
+  transform: translateX(4px);
+}
+
+.cert-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.cert-info {
+  flex: 1;
+}
+
+.cert-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.cert-issuer {
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.cert-code {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--cert-color);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid currentColor;
+  padding: 3px 10px;
+  border-radius: 2px;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.additional-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.info-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.ib-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.info-block h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.info-block p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .certifications { padding: 80px 24px; }
+  .certs-grid { grid-template-columns: 1fr; }
+  .additional-info { grid-template-columns: 1fr; }
+}
